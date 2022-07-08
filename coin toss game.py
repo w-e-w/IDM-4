@@ -1,9 +1,18 @@
 import random
+
+
 def toss_coin():
     return bool(random.getrandbits(1))
 
 
+def greet_user_name():
+    print('Who are you?')
+    name = input('> ')
+    print('Hello, {}!'.format(name))
+
+
 def coin_toss_game(rounds:int=3):
+    greet_user_name()
     print('Tossing a coin...')
     results = []
     for rond in range(1, rounds + 1):
