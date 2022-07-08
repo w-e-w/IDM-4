@@ -3,17 +3,22 @@ import random
 from unicodedata import name
 
 
+# tells you if you win or lose
 def win_lose(heads_count, tails_count, name:str):
     if heads_count > tails_count:
         print('{} Won!'.format(name))
-    else:
+    elif heads_count < tails_count :
         print('{} Lost!'.format(name))
+    else:
+        print('{} It\'s a tie!'.format(name))
 
 
+# toss a coin using random boolen
 def toss_coin():
     return bool(random.getrandbits(1))
 
 
+# ask player name and greets them
 def greet_user_name():
     print('Who are you?')
     name = input('> ')
@@ -21,6 +26,7 @@ def greet_user_name():
     return name
 
 
+# a simple coin toss game of X rouns
 def coin_toss_game(rounds:int=3):
     name = greet_user_name()
     print('Tossing a coin...')
